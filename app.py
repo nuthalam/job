@@ -12,6 +12,7 @@ def reed():
         "locationName": "London",
         "temp": "false",
         "postedByRecruitmentAgency": "True",
+        "fullTime": "False",
         "distanceFromLocation": 1,
         "keywords": "chef"
     }
