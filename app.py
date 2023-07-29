@@ -12,6 +12,7 @@ def reed():
         "locationName": "London",
         "temp": "false",
         "postedByRecruitmentAgency": "True",
+        "distanceFromLocation": 1,
         "keywords": "chef"
     }
     response = requests.get(api, params=data, auth=Key)
