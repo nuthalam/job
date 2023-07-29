@@ -14,7 +14,9 @@ def reed():
         "postedByRecruitmentAgency": "True",
         "fullTime": "False",
         "distanceFromLocation": 1,
-        "keywords": "chef"
+        "keywords": "chef",
+        "employerId": 365740
+
     }
     response = requests.get(api, params=data, auth=Key)
     return response.json()
