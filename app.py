@@ -10,7 +10,8 @@ def reed():
     api = "https://www.reed.co.uk/api/1.0/search"
     data = {
         "locationName": "London",
-        "temp": "false"
+        "temp": "false",
+        "keywords": "chef"
     }
     response = requests.get(api, params=data, auth=Key)
     return response.json()
