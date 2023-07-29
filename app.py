@@ -20,3 +20,13 @@ def reed():
     }
     response = requests.get(api, params=data, auth=Key)
     return response.json()
+    if response.status_code == 200:
+            job_results = response.json()
+            if "results" in job_results and len(job_results["results"]) > 0:
+                # Display the first job listing in the results
+                job_listing = job_results['results'][0]
+                return f"Job Title: {job_listing['jobTitle']}"
+            else:
+                return "No job listings found."
+    else:
+            return f"Error occurred while fetching job results. Status code: {response.status_code}"
