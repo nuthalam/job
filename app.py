@@ -12,6 +12,7 @@ def reed():
         location = request.form.get("location", "")  # Get the value of 'location' from the form
         keywords = request.form.get("keywords", "")  # Get the value of 'keywords' from the form
         full_time = request.form.get("fullTime", False)  # Get the value of 'fullTime' from the form
+        recruitment_agency = request.form.get("postedByRecruitmentAgency", False)  # Get the value of 'postedByRecruitmentAgency' from the form
     api = "https://www.reed.co.uk/api/1.0/search"
     data = {
         "locationName": "London",
