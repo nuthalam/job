@@ -39,7 +39,7 @@ def reed():
         else:
                 error_message = f"Error occurred while fetching job results. Status code: {response.status_code}"
                 return render_template('index.html', error_message=error_message)
-     except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException as e:
             error = f"An error occurred: {e}"
             return render_template('index.html', error=error)
     return render_template('index.html')  # Render the template for the initial GET request
