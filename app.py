@@ -34,3 +34,5 @@ def reed():
                     job_listing = job_results['results'][0]  # Get the first job listing from the results
                     title = f"Job Title: {job_listing['jobTitle']}"  # Create a job title string
                     return render_template('index.html', title=title)  # Render the template with the job title
+            else:
+                    return "No job listings found."  # Return a message if no job listings were found
