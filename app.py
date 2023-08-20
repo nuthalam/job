@@ -2,7 +2,7 @@ from flask import Flask, render_template, request  # Import necessary Flask modu
 import requests  # Import the 'requests' library for making HTTP requests
 from requests.auth import HTTPBasicAuth  # Import 'HTTPBasicAuth' from 'requests.auth'
 
-app = Flask(_name_)  # Create a Flask application instance
+app = Flask(__name__)  # Create a Flask application instance
 
 Key = HTTPBasicAuth('2e03f95f-cf38-4bf9-b8c3-4ce1aa1bce41', '')# Set up API authentication
 @app.route("/", methods=['GET', 'POST'])  # Define a route for the root URL
@@ -43,3 +43,5 @@ def reed():
             error = f"An error occurred: {e}"
             return render_template('index.html', error=error)
     return render_template('index.html')  # Render the template for the initial GET request
+if __name__ == "_main_":
+    app.run()  # Run the Flask application if the script is executed directly
