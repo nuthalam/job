@@ -9,16 +9,24 @@
     <div class="header">
         <h1>Find a Job You'll Love</h1>  <!-- Header section with title -->
     </div>
+    
     <div class="filter-container">
         <form method="POST">  <!-- Form element with POST method -->
+
             <label for="location">Location:</label>
             <input type="text" id="location" name="location" placeholder="Enter location">  <!-- Input field for location -->
             <hr> <!-- Horizontal line to separate filters -->
+
             <label for="keywords">Keywords:</label>
             <input type="text" id="keywords" name="keywords" placeholder="Enter keywords">  <!-- Input field for keywords -->
             <hr> <!-- Horizontal line to separate filters -->
+
             <label for="fullTime">Full Time:</label>
             <input type="checkbox" id="fullTime" name="fullTime" value="true">  <!-- Checkbox for full-time option -->
+            <hr> <!-- Horizontal line to separate filters -->
+            
+            <label for="postedByRecruitmentAgency">Posted by Recruitment Agency:</label>
+            <input type="checkbox" id="postedByRecruitmentAgency" name="postedByRecruitmentAgency" value="true">  <!-- Checkbox for recruitment agency option -->
             <hr> <!-- Horizontal line to separate filters -->
 
             <button type="submit">Search Jobs</button>  <!-- Submit button to initiate the form submission -->
