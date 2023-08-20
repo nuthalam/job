@@ -24,5 +24,12 @@
             <button type="submit">Search Jobs</button>  <!-- Submit button to initiate the form submission -->
         </form>
     </div>
+    <div id="results">
+        {% if title %}
+        <p>{{ title }}</p>  <!-- Display job title if available -->
+        {% elif error_message %}
+        <p>{{ error_message }}</p>  <!-- Display error message if available -->
+        {% endif %}
+    </div>
 </body>
 </html>
