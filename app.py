@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request  # Import necessary Flask modules
 import requests
 from requests.auth import HTTPBasicAuth
 
