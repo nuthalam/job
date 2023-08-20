@@ -10,6 +10,7 @@ Key = HTTPBasicAuth('2e03f95f-cf38-4bf9-b8c3-4ce1aa1bce41', '')# Set up API auth
 def reed():
     if request.method == 'POST':  # Check if the request method is POST
         location = request.form.get("location", "")  # Get the value of 'location' from the form
+        keywords = request.form.get("keywords", "")  # Get the value of 'keywords' from the form
     api = "https://www.reed.co.uk/api/1.0/search"
     data = {
         "locationName": "London",
