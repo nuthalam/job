@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request  # Import necessary Flask modules
-import requests
-from requests.auth import HTTPBasicAuth
+import requests  # Import the 'requests' library for making HTTP requests
+from requests.auth import HTTPBasicAuth  # Import 'HTTPBasicAuth' from 'requests.auth'
 
-Key = HTTPBasicAuth('2e03f95f-cf38-4bf9-b8c3-4ce1aa1bce41', '')
-app = Flask('Flask')
+app = Flask(_name_)  # Create a Flask application instance
 
-@app.route("/")
+Key = HTTPBasicAuth('2e03f95f-cf38-4bf9-b8c3-4ce1aa1bce41', '')# Set up API authentication
+@app.route("/", methods=['GET', 'POST'])  # Define a route for the root URL
+
 def reed():
     api = "https://www.reed.co.uk/api/1.0/search"
     data = {
