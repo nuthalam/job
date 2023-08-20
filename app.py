@@ -30,15 +30,7 @@ def reed():
         # Check if the API request was successful (HTTP status code 200)
         if response.status_code == 200:# Check if the response status code is 200 (OK)
             job_results = response.json()# Parse the JSON response
-            if "results" in job_results and len(job_results["results"]) > 0:
-                # Display the first job listing in the results
-                job_listing = job_results['results'][0]
-                return f"Job Title: {job_listing['jobTitle']}"
-            else:
-                return "No job listings found."
-        else:
-            return f"Error occurred while fetching job results. Status code: {response.status_code}"
-
-    except requests.exceptions.RequestException as e:
-        return f"An error occurred: {e}"
-
+            if "results" in job_results and job_results["results"]:
+                    job_listing = job_results['results'][0]  # Get the first job listing from the results
+                    title = f"Job Title: {job_listing['jobTitle']}"  # Create a job title string
+                    return render_template('index.html', title=title)  # Render the template with the job title
