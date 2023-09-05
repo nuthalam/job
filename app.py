@@ -7,7 +7,7 @@ app = Flask(__name__)  # Create a Flask application instance
 API_KEY = HTTPBasicAuth('fe4c8fa7-c07c-422e-9573-4659750ab08b', '')  # Set up API authentication
 
 @app.route("/", methods=['GET', 'POST'])  # Define a route for the root URL
-def jobs():
+def job():
     if request.method == 'POST':  # Check if the request method is POST
         location = request.form.get("location", "")  # Get the value of 'location' from the form
         keywords = request.form.get("keywords", "")  # Get the value of 'keywords' from the form
