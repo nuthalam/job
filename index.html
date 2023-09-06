@@ -1,50 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Job Search Filters</title>
-</head>
-<body>
-    <div class="header">
-        <h1>Find a Job You'll Love</h1>
-    </div>
-    <div class="filter-container">
-        <form method="POST">
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" placeholder="Enter location">
+<!DOCTYPE html>  <!-- Document type declaration -->
+<html lang="en">  <!-- Opening HTML tag with language attribute -->
+
+<head>  <!-- Start of the head section -->
+    <meta charset="UTF-8">  <!-- Character encoding declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- Viewport settings for responsiveness -->
+    <title>Job Search Filters</title>  <!-- Title of the web page displayed in the browser -->
+</head>  <!-- End of the head section -->
+
+<body>  <!-- Start of the body section -->
+    <div class="header">  <!-- Start of a div element with class "header" -->
+        <h1>Find a Job You'll Love</h1>  <!-- Heading 1 element with text -->
+    </div>  <!-- End of the "header" div element -->
+
+    <div class="filter-container">  <!-- Start of a div element with class "filter-container" -->
+        <form method="POST">  <!-- Start of a form element with POST method -->
+
+            <label for="location">Location:</label>  <!-- Label for input field with "location" id -->
+            <input type="text" id="location" name="location" placeholder="Enter location">  <!-- Text input field for location with id and name attributes -->
+
             <hr> <!-- Horizontal line to separate filters -->
 
-            <label for="keywords">Keywords:</label>
-            <input type="text" id="keywords" name="keywords" placeholder="Enter keywords">
+            <label for="keywords">Keywords:</label>  <!-- Label for input field with "keywords" id -->
+            <input type="text" id="keywords" name="keywords" placeholder="Enter keywords">  <!-- Text input field for keywords with id and name attributes -->
+
             <hr> <!-- Horizontal line to separate filters -->
 
-            <label for="fullTime">Full Time:</label>
-            <input type="checkbox" id="fullTime" name="fullTime" value="true">
+            <label for="fullTime">Full Time:</label>  <!-- Label for checkbox input with "fullTime" id -->
+            <input type="checkbox" id="fullTime" name="fullTime" value="true">  <!-- Checkbox input field for full-time option with id, name, and value attributes -->
+
             <hr> <!-- Horizontal line to separate filters -->
 
-            <label for="postedByRecruitmentAgency">Posted by Recruitment Agency:</label>
-            <input type="checkbox" id="postedByRecruitmentAgency" name="postedByRecruitmentAgency" value="true">
+            <label for="postedByRecruitmentAgency">Posted by Recruitment Agency:</label>  <!-- Label for checkbox input with "postedByRecruitmentAgency" id -->
+            <input type="checkbox" id="postedByRecruitmentAgency" name="postedByRecruitmentAgency" value="true">  <!-- Checkbox input field for recruitment agency option with id, name, and value attributes -->
+
             <hr> <!-- Horizontal line to separate filters -->
 
-            <label for="employerId">employerId:</label>
-            <input type="text" id="employerId" name="employerId" placeholder="Enter employerId">
+            <label for="employerId">employerId:</label>  <!-- Label for input field with "employerId" id -->
+            <input type="text" id="employerId" name="employerId" placeholder="Enter employerId">  <!-- Text input field for employerId with id and name attributes -->
+
             <hr> <!-- Horizontal line to separate filters -->
 
-            <button type="submit">Search Jobs</button>
-        </form>
-    </div>
+            <button type="submit">Search Jobs</button>  <!-- Submit button for form submission -->
 
-    <div id="results">
-        {% if title %}
-        <h2>{{ title }}</h2>
-        <p><strong>Description:</strong> {{ description }}</p>
-        <p><strong>Minimum Salary:</strong> £{{ min_salary }}</p>
-        <p><strong>Maximum Salary:</strong> £{{ max_salary }}</p>
-        {% elif error_message %}
-        <p>{{ error_message }}</p>
-        {% endif %}
-    </div>
+        </form>  <!-- End of the form element -->
+    </div>  <!-- End of the "filter-container" div element -->
 
-</body>
-</html>
+    <div id="results">  <!-- Start of a div element with id "results" -->
+        {% if title %}  <!-- Conditional block, if "title" variable exists -->
+        <h2>{{ title }}</h2>  <!-- Heading 2 element displaying the value of "title" -->
+        <p><strong>Location:</strong> {{ location }}</p>  <!-- Paragraph displaying location -->
+        <p><strong>Description:</strong> {{ description }}</p>  <!-- Paragraph displaying job description -->
+        <p><strong>Minimum Salary:</strong> £{{ min_salary }}</p>  <!-- Paragraph displaying minimum salary -->
+        <p><strong>Maximum Salary:</strong> £{{ max_salary }}</p>  <!-- Paragraph displaying maximum salary -->
+        {% elif error_message %}  <!-- Conditional block, if "error_message" variable exists -->
+        <p>{{ error_message }}</p>  <!-- Paragraph displaying error message -->
+        {% endif %}  <!-- End of the conditional block -->
+    </div>  <!-- End of the "results" div element -->
+
+</body>  <!-- End of the body section -->
+</html>  <!-- Closing HTML tag -->
